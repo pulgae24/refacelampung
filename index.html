@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LAMPUNG BEYOND FOREST | Interactive Hub</title>
+    <title>LAMPUNG BEYOND FOREST | Digital Showcase</title>
     <!-- Menggunakan Font Modern Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2=family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <!-- FontAwesome untuk Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -78,17 +78,17 @@
             letter-spacing: 1px;
         }
 
-        /* Bagian Profil Putra Daerah */
+        /* Bagian Profil - Latar Belakang Gold Siger */
         .profile-section {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            background: linear-gradient(180deg, rgba(120, 0, 22, 0.2) 0%, rgba(255,255,255,0.01) 100%);
+            background: linear-gradient(180deg, rgba(212, 163, 115, 0.2) 0%, rgba(255,255,255,0.01) 100%);
             border-radius: 20px;
             padding: 20px 15px;
             margin-bottom: 25px;
-            border: 1px solid rgba(214, 163, 115, 0.2);
+            border: 1px solid rgba(214, 163, 115, 0.3);
         }
 
         .profile-img {
@@ -103,7 +103,7 @@
         }
 
         .profile-section h2 {
-            font-size: 17px;
+            font-size: 18px;
             font-weight: 800;
             color: var(--white);
             letter-spacing: 0.5px;
@@ -200,11 +200,19 @@
             padding-bottom: 4px;
         }
 
+        .interactive-box p {
+            font-size: 12.5px;
+            line-height: 1.5;
+            color: #DDDDDD;
+            margin-bottom: 12px;
+        }
+
         .interactive-box ul {
             list-style: none;
             font-size: 12px;
             line-height: 1.6;
             color: #DDDDDD;
+            margin-bottom: 12px;
         }
 
         .interactive-box li {
@@ -220,6 +228,16 @@
             position: absolute;
             left: 0;
             top: 1px;
+        }
+
+        /* Desain Gambar Di Dalam Dropdown */
+        .showcase-img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid rgba(214, 163, 115, 0.3);
+            margin-top: 10px;
+            display: block;
         }
 
         /* Menu Tombol Interaktif */
@@ -277,7 +295,7 @@
     <div class="dashboard-container">
         <div class="siger-ornamen"></div>
 
-        <!-- Header Portal -->
+        <!-- Header Utama -->
         <header>
             <h1>LAMPUNG BEYOND FOREST</h1>
             <p>Culture, Tourism, & Industrial Interactive Hub &bull; Advokasi Digital</p>
@@ -285,7 +303,7 @@
 
         <!-- KARTU PROFIL PUTRA DAERAH -->
         <div class="profile-section">
-            <img src="https://i.postimg.cc/mD8gD96n/image-fd025f.jpg" alt="Foto Farel Sehan Ramadhani" class="profile-img">
+            <img src="image_fd025f.jpeg" alt="Foto Farel Sehan Ramadhani" class="profile-img">
             <h2>FAREL SEHAN RAMADHANI</h2>
             <p>Calon Putra Daerah / Agent of Change</p>
         </div>
@@ -306,17 +324,17 @@
             </div>
         </div>
 
-        <!-- Masalah & Realita -->
+        <!-- Masalah & Realita Gerakan -->
         <div class="section-title">
             <i class="fa-solid fa-gopuram"></i> Melawan Stigma Pelosok
         </div>
         <div class="content-box">
-            <p><strong>Menyingkap Wajah Asli Lampung:</strong> Banyak orang luar mengira Lampung hanya hutan belantara terpencil. Platform ini melangkah lebih jauh (Beyond Forest) untuk menjelajahi keindahan budaya, keelokan aksara, pesona pariwisata, hingga kekuatan industri modern yang mendunia.</p>
+            <p><strong>Menyingkap Wajah Asli Lampung:</strong> Banyak orang luar mengira Lampung hanya hutan belantara terpencil. Etalase pameran digital (Digital Showcase) ini diinisiasi secara mandiri untuk meruntuhkan stigma keliru tersebut. Mari saksikan kejayaan tradisi, pesona pariwisata, hingga kedahsyatan data industri makro yang mendunia dari bumi Ruwa Jurai.</p>
         </div>
 
-        <!-- Tombol Aksi Nyata Duta Daerah -->
+        <!-- Tombol Interaktif Showcase -->
         <div class="section-title">
-            <i class="fa-solid fa-fingerprint"></i> Hub Interaktif Putra Daerah
+            <i class="fa-solid fa-fingerprint"></i> Menu Utama Etalase Digital
         </div>
         
         <div class="btn-menu">
@@ -325,50 +343,94 @@
                 <span><i class="fa-solid fa-hourglass-half"></i> &nbsp;Buka Garis Waktu Sejarah</span>
                 <i class="fa-solid fa-chevron-down" id="arrow-1"></i>
             </div>
-
             <div class="interactive-box" id="history-content">
                 <h4>Kronologi Kejayaan & Perjuangan Bumi Lampung:</h4>
                 <ul>
-                    <li><strong>Era Kolonial (1682):</strong> Karena kaya akan lada dan rempah-rempah, Lampung diincar oleh VOC Belanda melalui perjanjian dagang monopoli dengan Sultan Haji dari Kesultanan Banten.</li>
-                    <li><strong>Perlawanan Radin Inten I - II (1817-1856):</strong> Rakyat Lampung gencar melawan penindasan. Dipimpin secara turun-temurun oleh Radin Inten, Radin Imba Kusuma, hingga pahlawan nasional Radin Inten II yang gugur demi menjaga kedaulatan tanah Lampung.</li>
-                    <li><strong>Awal Industrialisasi Modern (1913):</strong> Penancapan pengaruh komoditas perkebunan kopi, karet, dan sawit oleh Belanda yang disusul oleh pembangunan jalur kereta api pertama dari Telukbetung menuju Palembang.</li>
-                    <li><strong>Kelahiran Provinsi (18 Maret 1964):</strong> Menunjukkan corak warna budaya dan potensi ekonomi mandiri yang sangat masif, Lampung resmi memisahkan diri dari Karesidenan Sumatra Selatan menjadi Provinsi Lampung Tingkat I berdasarkan UU No. 14 Tahun 1964.</li>
+                    <li><strong>Era Kolonial (1682):</strong> Karena kaya akan komoditas lada dan rempah-rempah bernilai tinggi, wilayah Lampung diincar oleh VOC Belanda melalui taktik perjanjian dagang monopoli dengan Sultan Haji dari Kesultanan Banten.</li>
+                    <li><strong>Perlawanan Radin Inten I - II (1817-1856):</strong> Rakyat Lampung gencar mengobarkan perang melawan penindasan. Dipimpin secara turun-temurun oleh Radin Inten, Radin Imba Kusuma, hingga pahlawan nasional Radin Inten II yang gugur demi menjaga marwah tanah adat.</li>
+                    <li><strong>Awal Industrialisasi Modern (1913):</strong> Penancapan pengaruh komoditas perkebunan kopi, karet, dan sawit berskala besar oleh Belanda, disusul pembukaan jalur kereta api pertama dari Telukbetung menuju Palembang.</li>
+                    <li><strong>Kelahiran Provinsi (18 Maret 1964):</strong> Menunjukkan corak warna budaya unik dan kemandirian ekonomi yang masif, Lampung resmi memisahkan diri dari Karesidenan Sumatra Selatan menjadi Provinsi Tingkat I berdasarkan UU No. 14 Tahun 1964.</li>
                 </ul>
+                <!-- PENTING: Ganti src di bawah ini dengan Direct Link foto Monumen Sejarah / Radin Inten II -->
+                <img src="https://via.placeholder.com/400x200?text=Foto+Arsip+Sejarah+/+Pahlawan+Radin+Inten" class="showcase-img" alt="Sejarah Lampung">
             </div>
 
-            <!-- TOMBOL 2: EKSPLORASI BUDAYA -->
-            <a class="btn-item" onclick="alert('Membuka Ruang Budaya: Memuat ensiklopedia digital pakaian adat Tapis, seni pertunjukan, serta penerapan nilai luhur Piil Pesenggiri sebagai identitas karakter masyarakat Lampung!')">
+            <!-- TOMBOL 2: EKSPLORASI KEBUDAYAAN DAERAH -->
+            <div class="btn-item" onclick="toggleSection('culture-content', 'arrow-2')">
                 <span><i class="fa-solid fa-gopuram"></i> &nbsp;Eksplorasi Kebudayaan Daerah</span>
-                <i class="fa-solid fa-chevron-right"></i>
-            </a>
+                <i class="fa-solid fa-chevron-down" id="arrow-2"></i>
+            </div>
+            <div class="interactive-box" id="culture-content">
+                <h4>Etalase Khazanah Kebudayaan Adat</h4>
+                <p>Menjelajahi nilai keluhuran seni tradisi kain tenun emas dan identitas moralitas adat Lampung yang luhur:</p>
+                <ul>
+                    <li><strong>Kain Tapis Tradisional:</strong> Kerajinan tenun benang emas khas bermotif flora, fauna, dan kapal sejarah sebagai simbol status sosial adat yang sangat dihargai tinggi.</li>
+                    <li><strong>Falsafah Piil Pesenggiri:</strong> Tiang prinsip moralitas hidup masyarakat Lampung untuk selalu menjaga kehormatan diri, bersikap terbuka pada pendatang (Nemui Nyimah), dan bergotong royong (Sakai Sambayan).</li>
+                </ul>
+                <!-- PENTING: Ganti src di bawah ini dengan Direct Link foto Kain Tapis dari Postimages -->
+                <img src="https://via.placeholder.com/400x200?text=Foto+Kain+Tapis+Atau+Seni+Budaya+Lampung" class="showcase-img" alt="Budaya Lampung">
+            </div>
 
-            <!-- TOMBOL 3: PARIWISATA -->
-            <a class="btn-item" onclick="alert('Membuka Peta Wisata: Menjelajahi pesona wisata Lampung, mulai dari Pantai Gigi Hiu, Teluk Kiluan, Taman Nasional Way Kambas, hingga keindahan alam dataran tinggi Lampung Barat!')">
+            <!-- TOMBOL 3: JELAJAH PESONA PARIWISATA -->
+            <div class="btn-item" onclick="toggleSection('tourism-content', 'arrow-3')">
                 <span><i class="fa-solid fa-compass"></i> &nbsp;Jelajah Pesona Pariwisata</span>
-                <i class="fa-solid fa-chevron-right"></i>
-            </a>
+                <i class="fa-solid fa-chevron-down" id="arrow-3"></i>
+            </div>
+            <div class="interactive-box" id="tourism-content">
+                <h4>Peta Navigasi Surga Tersembunyi</h4>
+                <p>Destinasi pariwisata unggulan yang membuktikan eksotisme alam Lampung sangat kaya, berkelas internasional, dan bervariasi:</p>
+                <ul>
+                    <li><strong>Teluk Kiluan:</strong> Habitat alami kawanan ratusan lumba-lumba hidung botol liar yang bisa disaksikan menari langsung di laut lepas menggunakan perahu ketinting tradisional.</li>
+                    <li><strong>Pantai Gigi Hiu:</strong> Gugusan batuan karst tajam nan artistik yang tegak berdiri menantang deburan ombak besar Samudra Hindia, surga bagi para fotografer dunia.</li>
+                    <li><strong>Ekowisata Lampung Barat:</strong> Pesona agrowisata perkebunan kopi robusta rakyat dan kawasan dataran tinggi berkabut yang menyejukkan mirip seperti Swiss di Sumatra.</li>
+                </ul>
+                <!-- PENTING: Ganti src di bawah ini dengan Direct Link foto Teluk Kiluan / Gigi Hiu -->
+                <img src="https://via.placeholder.com/400x200?text=Foto+Eksotisme+Wisata+Alam+Lampung" class="showcase-img" alt="Pariwisata Lampung">
+            </div>
 
-            <!-- TOMBOL 4: DATA INDUSTRI -->
-            <a class="btn-item" onclick="alert('Membuka Data Industri: Memuat infografis lengkap komoditas ekspor kopi robusta, lada hitam, dan fakta industri nanas kaleng nomor 1 Asia di Terbanggi Besar!')">
-                <span><i class="fa-solid fa-chart-line"></i> &nbsp;Buka Data Industri Global</span>
-                <i class="fa-solid fa-chevron-right"></i>
-            </a>
+            <!-- TOMBOL 4: PAMERAN DATA INDUSTRI GLOBAL -->
+            <div class="btn-item" onclick="toggleSection('industry-content', 'arrow-4')">
+                <span><i class="fa-solid fa-chart-line"></i> &nbsp;Pameran Data Industri Global</span>
+                <i class="fa-solid fa-chevron-down" id="arrow-4"></i>
+            </div>
+            <div class="interactive-box" id="industry-content">
+                <h4>Pusat Komoditas Ekonomi Internasional</h4>
+                <p>Fakta angka statistik riil yang menghancurkan stigma bahwa Lampung hanyalah pelosok pedalaman hutan yang sepi:</p>
+                <ul>
+                    <li><strong>Raksasa Nanas Kaleng Asia:</strong> Modernisasi perkebunan dan pabrik pengolahan agroindustri nanas kaleng nomor 1 di Asia terpusat di Terbanggi Besar, menembus pasar ekspor ke lebih dari 60 negara tujuan global.</li>
+                    <li><strong>Penopang Robusta Nasional:</strong> Menyumbang hingga 45% dari seluruh total pasokan komoditas komersial lada hitam kuat dan kopi robusta Indonesia untuk disuplai ke pasar kuliner mewah Eropa.</li>
+                </ul>
+                <!-- PENTING: Ganti src di bawah ini dengan Direct Link infografis data industri / pabrik -->
+                <img src="https://via.placeholder.com/400x200?text=Infografis+Data+Industri+Terbanggi+Besar" class="showcase-img" alt="Industri Lampung">
+            </div>
             
-            <!-- TOMBOL 5: TAGAR & OLEH-OLEH -->
-            <a class="btn-item" onclick="alert('Terima kasih atas dukungannya! Melalui gerakan stiker QR Code pada kemasan oleh-oleh khas Lampung (kopi robusta, keripik pisang) dan tagar #LampungBeyondForest, mari kita kenalkan kekayaan Ruwa Jurai ke seluruh penjuru dunia!')">
+            <!-- TOMBOL 5: SUARAKAN #LAMPUNGBEYONDFOREST -->
+            <div class="btn-item" onclick="toggleSection('campaign-content', 'arrow-5')">
                 <span><i class="fa-solid fa-gift"></i> &nbsp;Suarakan #LampungBeyondForest</span>
-                <i class="fa-solid fa-chevron-right"></i>
-            </a>
+                <i class="fa-solid fa-chevron-down" id="arrow-5"></i>
+            </div>
+            <div class="interactive-box" id="campaign-content">
+                <h4>Strategi Kampanye Taktis Berbasis Oleh-Oleh</h4>
+                <p>Bagaimana cara kita mengampanyekan gerakan pertukaran informasi ini ke seluruh penjuru dunia secara taktis, hemat biaya, dan berdampak masif melalui produk lokal:</p>
+                <ul>
+                    <li><strong>Stiker Kemasan Oleh-Oleh Khas:</strong> Pemasangan stiker QR Code fisik secara terintegrasi di kotak bubuk kopi robusta dan kemasan keripik pisang Lampung agar di-scan langsung oleh pembeli luar daerah maupun wisatawan internasional saat kembali ke tempat asal mereka.</li>
+                </ul>
+                <p style="margin-top: 15px; font-weight: 600; color: var(--primary); text-align: center;">
+                    <i class="fa-solid fa-heart"></i> Terima kasih banyak atas segala dukungan, partisipasi, dan apresiasi Anda terhadap kemajuan Bumi Ruwa Jurai!
+                </p>
+                <!-- PENTING: Ganti src di bawah ini dengan Direct Link foto stiker QR Code / desain produk oleh-oleh -->
+                <img src="https://via.placeholder.com/400x200?text=Visualisasi+Aksi+Stiker+QR+Code+Kemasan" class="showcase-img" alt="Kampanye Advokasi">
+            </div>
         </div>
 
         <!-- Slogan Adat Duta Daerah -->
         <footer>
             <em>"Muli mekhanai pelestari budayo, sai mak tabo, sai mak ngelaknai."</em>
-            <span>Inisiasi Aksi Nyata Mandiri oleh Farel Sehan Ramadhani &copy; 2026</span>
+            <span>Inisiasi Gerakan Mandiri oleh Farel Sehan Ramadhani &copy; 2026</span>
         </footer>
     </div>
 
-    <!-- Fungsi Logika Javascript untuk Dropdown -->
+    <!-- Fungsi Logika Javascript untuk Dropdown Menu Kreatif -->
     <script>
         function toggleSection(contentId, arrowId) {
             var content = document.getElementById(contentId);
