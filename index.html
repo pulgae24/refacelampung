@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RE-FACE LAMPUNG | Agroglobal Dashboard</title>
+    <title>LAMPUNG BEYOND FOREST | Interactive Hub</title>
     <!-- Menggunakan Font Modern Google -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <!-- FontAwesome untuk Icon -->
@@ -247,13 +247,14 @@
     <div class="dashboard-container">
         <!-- Header Portal -->
         <header>
-            <h1>RE-FACE LAMPUNG</h1>
-            <p>Agroglobal Interactive Dashboard &bull; Advokasi Digital</p>
+            <h1>LAMPUNG BEYOND FOREST</h1>
+            <p>Culture, Tourism, & Industrial Interactive Hub &bull; Advokasi Digital</p>
         </header>
 
         <!-- KARTU PROFIL PUTRA DAERAH -->
         <div class="profile-section">
-            <img src="image_fd025f.jpeg" alt="Foto Farel Sehan Ramadhani" class="profile-img">
+            <!-- PENTING: Ganti isi src di bawah ini dengan Direct Link yang kamu dapat dari Postimages.org -->
+            <img src="image_fd025f.jpg" alt="Foto Farel Sehan Ramadhani" class="profile-img">
             <h2>FAREL SEHAN RAMADHANI</h2>
             <p>Calon Putra Daerah / Agent of Change</p>
         </div>
@@ -279,7 +280,7 @@
             <i class="fa-solid fa-earth-asia"></i> Melawan Stigma Pelosok
         </div>
         <div class="content-box">
-            <p><strong>Paradoks Geografis:</strong> Banyak orang luar mengira Lampung hanya hutan belantara terpencil. Padahal, bumi Lampung adalah raksasa ekonomi tak terlihat yang menyuplai komoditas pangan hingga ke pasar Eropa, Amerika, dan Asia secara modern sejak berabad-abad lalu.</p>
+            <p><strong>Menyingkap Wajah Asli Lampung:</strong> Banyak orang luar mengira Lampung hanya hutan belantara terpencil. Melalui platform ini, mari kita melangkah lebih jauh (Beyond Forest) untuk menjelajahi keindahan budaya, keelokan aksara, pesona pariwisata, hingga kekuatan industri modern yang mendunia sejak berabad-abad lalu.</p>
         </div>
 
         <!-- Tombol Aksi Nyata Duta Daerah -->
@@ -288,6 +289,7 @@
         </div>
         
         <div class="btn-menu">
+            <!-- Tombol Dropdown Sejarah -->
             <div class="btn-item" onclick="toggleHistory()">
                 <span><i class="fa-solid fa-hourglass-half"></i> &nbsp;Buka Garis Waktu Sejarah</span>
                 <i class="fa-solid fa-chevron-down" id="arrow-icon"></i>
@@ -304,16 +306,25 @@
                 </ul>
             </div>
 
-            <a class="btn-item" onclick="alert('Membuka Buku Saku Digital: Memuat infografis lengkap komoditas ekspor kopi, lada hitam, dan kelapa sawit rakyat!')">
-                <span><i class="fa-solid fa-book-open"></i> &nbsp;Buka Buku Saku Digital</span>
+            <!-- Tombol Ekplorasi Budaya & Aksara -->
+            <a class="btn-item" onclick="alert('Membuka Ruang Budaya: Memuat ensiklopedia digital pakaian adat Tapis, seni pertunjukan, serta panduan belajar Bahasa & Aksara Lampung (Had Lampung) secara interaktif!')">
+                <span><i class="fa-solid fa-gopuram"></i> &nbsp;Eksplorasi Budaya & Aksara</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+
+            <!-- Tombol Jelajah Pariwisata -->
+            <a class="btn-item" onclick="alert('Membuka Peta Wisata: Menjelajahi pesona wisata Lampung, mulai dari Pantai Gigi Hiu, Teluk Kiluan, Taman Nasional Way Kambas, hingga keindahan alam Lampung Barat!')">
+                <span><i class="fa-solid fa-compass"></i> &nbsp;Jelajah Pesona Pariwisata</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+
+            <!-- Tombol Data Industri -->
+            <a class="btn-item" onclick="alert('Membuka Data Industri: Memuat infografis lengkap komoditas ekspor kopi robusta, lada hitam, dan fakta industri nanas kaleng nomor 1 Asia di Terbanggi Besar!')">
+                <span><i class="fa-solid fa-chart-line"></i> &nbsp;Buka Data Industri Global</span>
                 <i class="fa-solid fa-chevron-right"></i>
             </a>
             
-            <a class="btn-item" onclick="alert('Memutar Video Dokumenter: Menampilkan visualisasi modernisasi pabrik industri Terbanggi Besar & Pelabuhan Panjang (1 Menit)')">
-                <span><i class="fa-solid fa-play"></i> &nbsp;Tonton Video Dokumenter</span>
-                <i class="fa-solid fa-chevron-right"></i>
-            </a>
-            
+            <!-- Tombol Tagar Suarakan -->
             <a class="btn-item" onclick="alert('Terima kasih! Dukungan Anda dengan tagar #LampungBeyondForest telah terekam di sistem.')">
                 <span><i class="fa-solid fa-heart"></i> &nbsp;Suarakan #LampungBeyondForest</span>
                 <i class="fa-solid fa-chevron-right"></i>
@@ -327,6 +338,7 @@
         </footer>
     </div>
 
+    <!-- Fungsi Logika Javascript -->
     <script>
         function toggleHistory() {
             var content = document.getElementById("history-content");
