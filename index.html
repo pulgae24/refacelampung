@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RE-FACE LAMPUNG | Agroglobal Dashboard</title>
+    <!-- Menggunakan Font Modern Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #D4A373; /* Warna Emas Siger Modern */
+            --dark: #1F2421;    /* Hitam Elegan */
+            --light: #FAEDCD;   /* Cream Estetik */
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 20px;
+        }
+
+        /* Container Utama Handphone Responsive */
+        .dashboard-container {
+            max-width: 480px;
+            margin: 0 auto;
+            background: #2A302C;
+            border-radius: 30px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 2px solid rgba(212, 163, 115, 0.2);
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 15px;
+        }
+
+        header h1 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 12px;
+            color: #A3B19B;
+            margin-top: 5px;
+        }
+
+        /* Bagian Profil Putra Daerah */
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 20px;
+            padding: 15px;
+            margin-bottom: 25px;
+            border: 1px dashed rgba(214, 163, 115, 0.3);
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+            border: 3px solid var(--primary);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
+        }
+
+        .profile-section h2 {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: 0.5px;
+        }
+
+        .profile-section p {
+            font-size: 11px;
+            color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        /* Kartu Angka Makro */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px 5px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(214, 163, 115, 0.1);
+        }
+
+        .stat-card h3 {
+            font-size: 18px;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .stat-card p {
+            font-size: 10px;
+            color: #CCCCCC;
+            margin-top: 4px;
+        }
+
+        /* Bagian Fitur/Konten */
+        .section-title {
+            font-size: 14px;
+            color: var(--primary);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .content-box {
+            background: rgba(255,255,255,0.03);
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .content-box p {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #E0E0E0;
+        }
+
+        /* Popup Sejarah */
+        .history-box {
+            background: #1F2421;
+            border: 1px solid var(--primary);
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 25px;
+            display: none;
+        }
+
+        .history-box h4 {
+            color: var(--primary);
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .history-box ul {
+            list-style: none;
+            font-size: 12px;
+            line-height: 1.6;
+            color: #DDDDDD;
+        }
+
+        .history-box li {
+            margin-bottom: 8px;
+            padding-left: 12px;
+            position: relative;
+        }
+
+        .history-box li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Menu Tombol Interaktif */
+        .btn-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .btn-item {
+            background: var(--primary);
+            color: var(--dark);
+            padding: 14px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .btn-item:hover {
+            transform: scale(1.02);
+            background: #E6B88A;
+        }
+
+        /* Footer Selempang */
+        footer {
+            text-align: center;
+            margin-top: 10px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        footer em {
+            font-size: 11px;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        footer span {
+            font-size: 10px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- Header Portal -->
+        <header>
+            <h1>RE-FACE LAMPUNG</h1>
+            <p>Agroglobal Interactive Dashboard &bull; Advokasi Digital</p>
+        </header>
+
+        <!-- KARTU PROFIL PUTRA DAERAH -->
+        <div class="profile-section">
+            <img src="image_fd025f.jpg" alt="Foto Farel Sehan Ramadhani" class="profile-img">
+            <h2>FAREL SEHAN RAMADHANI</h2>
+            <p>Calon Putra Daerah / Agent of Change</p>
+        </div>
+
+        <!-- Angka Fakta Makro -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>#1 ASIA</h3>
+                <p>Nanas Kaleng<br>Terbanggi Besar</p>
+            </div>
+            <div class="stat-card">
+                <h3>60+</h3>
+                <p>Negara Tujuan<br>Ekspor Global</p>
+            </div>
+            <div class="stat-card">
+                <h3>45%</h3>
+                <p>Pasokan Kopi<br>Robusta Nasional</p>
+            </div>
+        </div>
+
+        <!-- Masalah & Realita -->
+        <div class="section-title">
+            <i class="fa-solid fa-earth-asia"></i> Melawan Stigma Pelosok
+        </div>
+        <div class="content-box">
+            <p><strong>Paradoks Geografis:</strong> Banyak orang luar mengira Lampung hanya hutan belantara terpencil. Padahal, bumi Lampung adalah raksasa ekonomi tak terlihat yang menyuplai komoditas pangan hingga ke pasar Eropa, Amerika, dan Asia secara modern sejak berabad-abad lalu.</p>
+        </div>
+
+        <!-- Tombol Aksi Nyata Duta Daerah -->
+        <div class="section-title">
+            <i class="fa-solid fa-fingerprint"></i> Hub Interaktif Putra Daerah
+        </div>
+        
+        <div class="btn-menu">
+            <div class="btn-item" onclick="toggleHistory()">
+                <span><i class="fa-solid fa-hourglass-half"></i> &nbsp;Buka Garis Waktu Sejarah</span>
+                <i class="fa-solid fa-chevron-down" id="arrow-icon"></i>
+            </div>
+
+            <!-- Konten Sejarah Singkat Terintegrasi -->
+            <div class="history-box" id="history-content">
+                <h4>Kronologi Kejayaan & Perjuangan Bumi Lampung:</h4>
+                <ul>
+                    <li><strong>Era Kolonial (1682):</strong> Karena kaya akan lada dan rempah-rempah, Lampung diincar oleh VOC Belanda melalui perjanjian dagang monopoli dengan Sultan Haji dari Kesultanan Banten.</li>
+                    <li><strong>Perlawanan Radin Inten I - II (1817-1856):</strong> Rakyat Lampung gencar melawan penindasan. Dipimpin secara turun-temurun oleh Radin Inten, Radin Imba Kusuma, hingga pahlawan nasional Radin Inten II yang gugur demi menjaga kedaulatan tanah Lampung.</li>
+                    <li><strong>Awal Industrialisasi Modern (1913):</strong> Penancapan pengaruh komoditas perkebunan kopi, karet, dan sawit oleh Belanda yang disusul oleh pembangunan jalur kereta api pertama dari Telukbetung menuju Palembang.</li>
+                    <li><strong>Kelahiran Provinsi (18 Maret 1964):</strong> Menunjukkan corak warna budaya dan potensi ekonomi mandiri yang sangat masif, Lampung resmi memisahkan diri dari Karesidenan Sumatra Selatan menjadi Provinsi Lampung Tingkat I berdasarkan UU No. 14 Tahun 1964.</li>
+                </ul>
+            </div>
+
+            <a class="btn-item" onclick="alert('Membuka Buku Saku Digital: Memuat infografis lengkap komoditas ekspor kopi, lada hitam, dan kelapa sawit rakyat!')">
+                <span><i class="fa-solid fa-book-open"></i> &nbsp;Buka Buku Saku Digital</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+            
+            <a class="btn-item" onclick="alert('Memutar Video Dokumenter: Menampilkan visualisasi modernisasi pabrik industri Terbanggi Besar & Pelabuhan Panjang (1 Menit)')">
+                <span><i class="fa-solid fa-play"></i> &nbsp;Tonton Video Dokumenter</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+            
+            <a class="btn-item" onclick="alert('Terima kasih! Dukungan Anda dengan tagar #LampungBeyondForest telah terekam di sistem.')">
+                <span><i class="fa-solid fa-heart"></i> &nbsp;Suarakan #LampungBeyondForest</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+        </div>
+
+        <!-- Slogan Adat Duta Daerah -->
+        <footer>
+            <em>"Muli mekhanai pelestari budayo, sai mak tabo, sai mak ngelaknai."</em>
+            <span>Inisiasi Aksi Nyata Mandiri oleh Farel Sehan Ramadhani &copy; 2026</span>
+        </footer>
+    </div>
+
+    <script>
+        function toggleHistory() {
+            var content = document.getElementById("history-content");
+            var arrow = document.getElementById("arrow-icon");
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                arrow.className = "fa-solid fa-chevron-down";
+            } else {
+                content.style.display = "block";
+                arrow.className = "fa-solid fa-chevron-up";
+            }
+        }
+    </script>
+
+</body>
+</html>
