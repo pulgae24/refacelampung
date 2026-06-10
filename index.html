@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRESENTASI | LAMPUNG BEYOND FOREST</title>
+    <title>LAMPUNG BEYOND FOREST | Interactive Hub</title>
+    <!-- Menggunakan Font Modern Google -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome untuk Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         :root {
-            --primary: #D4A373; /* Emas Siger */
-            --dark: #1F2421;    /* Hitam Elegan */
+            --primary: #D4A373; /* Warna Emas Siger Modern */
+            --dark: #141715;    /* Hitam Arang Mewah */
+            --accent: #780016;  /* Merah Adat Eksklusif */
+            --card-bg: #1F2422; /* Hijau Gelap Sangat Redup */
             --white: #FFFFFF;
-            --gray: #A3B19B;
         }
 
         * {
@@ -24,387 +28,360 @@
         body {
             background-color: var(--dark);
             color: var(--white);
+            padding: 20px;
+        }
+
+        /* Container Utama Handphone Responsive */
+        .dashboard-container {
+            max-width: 480px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1A1F1C 0%, #111412 100%);
+            border-radius: 30px;
+            padding: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+            border: 2px solid var(--primary);
+            position: relative;
             overflow: hidden;
         }
 
-        /* Navigasi Slide */
-        .slide {
-            display: none;
-            width: 100vw;
-            height: 100vh;
-            padding: 60px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            background: radial-gradient(circle at center, #2A302C 0%, #1F2421 100%);
-        }
-
-        .slide.active {
-            display: flex;
-        }
-
-        /* Desain Slide 1 (Cover) */
-        .cover-layout {
-            display: flex;
+        /* Ornamen Mahkota Siger di Latar Belakang Atas */
+        .siger-ornamen {
             width: 100%;
-            max-width: 1200px;
-            align-items: center;
-            justify-content: space-between;
-            gap: 50px;
-        }
-
-        .cover-text {
-            flex: 1;
-        }
-
-        .cover-text h1 {
-            font-size: 56px;
-            font-weight: 800;
-            color: var(--primary);
-            line-height: 1.1;
+            height: 12px;
+            background: repeating-linear-gradient(45deg, var(--primary), var(--primary) 10px, var(--accent) 10px, var(--accent) 20px);
+            border-radius: 10px;
             margin-bottom: 20px;
-            letter-spacing: -1px;
+            box-shadow: 0 2px 10px rgba(212, 163, 115, 0.3);
         }
 
-        .cover-text p {
-            font-size: 20px;
-            color: var(--white);
-            margin-bottom: 40px;
-        }
-
-        .cover-text .author {
-            font-size: 18px;
-            color: var(--gray);
-            border-left: 3px solid var(--primary);
-            padding-left: 15px;
-        }
-
-        .cover-img-container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        .cover-img {
-            width: 380px;
-            height: 380px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: center top;
-            border: 6px solid var(--primary);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-        }
-
-        /* Desain Konten Umum */
-        .slide-container {
-            width: 100%;
-            max-width: 1100px;
-        }
-
-        .slide-header {
-            margin-bottom: 40px;
-            border-bottom: 2px solid rgba(214, 163, 115, 0.2);
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(214, 163, 115, 0.2);
             padding-bottom: 15px;
         }
 
-        .slide-header h2 {
-            font-size: 40px;
+        header h1 {
+            font-size: 26px;
             font-weight: 800;
             color: var(--primary);
+            letter-spacing: 1.5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
-        .slide-header p {
-            font-size: 18px;
-            color: var(--gray);
+        header p {
+            font-size: 11px;
+            color: #A3B19B;
             margin-top: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .slide-content {
-            font-size: 22px;
-            line-height: 1.6;
-        }
-
-        .slide-content ul {
-            list-style: none;
-        }
-
-        .slide-content li {
+        /* Bagian Profil Putra Daerah */
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(120, 0, 22, 0.2) 0%, rgba(255,255,255,0.01) 100%);
+            border-radius: 20px;
+            padding: 20px 15px;
             margin-bottom: 25px;
-            padding-left: 40px;
-            position: relative;
+            border: 1px solid rgba(214, 163, 115, 0.2);
         }
 
-        .slide-content li::before {
-            content: "➔";
+        .profile-img {
+            width: 125px;
+            height: 125px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+            border: 3px solid var(--primary);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            margin-bottom: 12px;
+        }
+
+        .profile-section h2 {
+            font-size: 17px;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: 0.5px;
+        }
+
+        .profile-section p {
+            font-size: 11px;
             color: var(--primary);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 4px;
         }
 
-        /* Grid Layout Fitur & Implementasi */
-        .grid-layout {
+        /* Kartu Angka Makro */
+        .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 10px;
+            gap: 10px;
+            margin-bottom: 25px;
         }
 
-        .grid-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(214, 163, 115, 0.2);
-            border-radius: 20px;
-            padding: 25px 20px;
-            text-align: left;
+        .stat-card {
+            background: var(--card-bg);
+            padding: 15px 5px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(214, 163, 115, 0.15);
+            border-top: 3px solid var(--accent);
         }
 
-        .grid-card-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-            border-bottom: 1px dashed rgba(214, 163, 115, 0.3);
-            padding-bottom: 10px;
-        }
-
-        .grid-card i {
-            font-size: 30px;
-            color: var(--primary);
-        }
-
-        .grid-card h3 {
-            font-size: 20px;
+        .stat-card h3 {
+            font-size: 16px;
             color: var(--primary);
             font-weight: 800;
         }
 
-        .grid-card ul {
-            list-style: none;
+        .stat-card p {
+            font-size: 9px;
+            color: #DDDDDD;
+            margin-top: 4px;
+            line-height: 1.3;
         }
 
-        .grid-card li {
+        /* Bagian Fitur/Konten */
+        .section-title {
             font-size: 13px;
+            color: var(--primary);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title i {
+            color: var(--accent);
+        }
+
+        .content-box {
+            background: rgba(255,255,255,0.02);
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--accent);
+            border-right: 1px solid rgba(214, 163, 115, 0.1);
+        }
+
+        .content-box p {
+            font-size: 13px;
+            line-height: 1.6;
             color: #E0E0E0;
-            line-height: 1.5;
+        }
+
+        /* Box Dropdown Interaktif */
+        .interactive-box {
+            background: #1A1F1D;
+            border: 1px dashed var(--primary);
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+            margin-top: -8px;
+            display: none;
+        }
+
+        .interactive-box h4 {
+            color: var(--primary);
+            font-size: 13px;
             margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 4px;
+        }
+
+        .interactive-box ul {
+            list-style: none;
+            font-size: 12px;
+            line-height: 1.6;
+            color: #DDDDDD;
+        }
+
+        .interactive-box li {
+            margin-bottom: 8px;
             padding-left: 15px;
             position: relative;
         }
 
-        .grid-card li::before {
-            content: "•";
-            color: var(--primary);
+        .interactive-box li::before {
+            content: "◆";
+            color: var(--accent);
+            font-size: 10px;
             position: absolute;
             left: 0;
-            font-weight: bold;
+            top: 1px;
         }
 
-        /* Footer Navigasi Petunjuk */
-        .nav-hint {
-            position: absolute;
-            bottom: 20px;
-            font-size: 14px;
-            color: rgba(255,255,255,0.3);
-            letter-spacing: 1px;
+        /* Menu Tombol Interaktif */
+        .btn-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
         }
 
-        /* Slogan Penutup */
-        .slogan {
-            font-style: italic;
-            font-size: 28px;
-            color: var(--primary);
+        .btn-item {
+            background: linear-gradient(90deg, var(--primary) 0%, #E6B88A 100%);
+            color: var(--dark);
+            padding: 14px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .btn-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(212, 163, 115, 0.4);
+        }
+
+        /* Footer */
+        footer {
             text-align: center;
-            margin: 40px 0;
+            margin-top: 10px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        footer em {
+            font-size: 11px;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        footer span {
+            font-size: 10px;
+            color: #666;
         }
     </style>
 </head>
 <body>
 
-    <!-- SLIDE 1: COVER -->
-    <div class="slide active" id="slide-1">
-        <div class="cover-layout">
-            <div class="cover-text">
-                <h1>LAMPUNG BEYOND FOREST</h1>
-                <p>Menyingkap Wajah Asli Ruwa Jurai di Era Globalisasi<br><small style="color:var(--gray)">Inovasi Hub Interaktif Berbasis Data, Budaya, dan Pariwisata</small></p>
-                <div class="author">
-                    <strong>FAREL SEHAN RAMADHANI</strong><br>
-                    <span>Calon Putra Daerah Lampung 2026</span>
-                </div>
+    <div class="dashboard-container">
+        <div class="siger-ornamen"></div>
+
+        <!-- Header Portal -->
+        <header>
+            <h1>LAMPUNG BEYOND FOREST</h1>
+            <p>Culture, Tourism, & Industrial Interactive Hub &bull; Advokasi Digital</p>
+        </header>
+
+        <!-- KARTU PROFIL PUTRA DAERAH -->
+        <div class="profile-section">
+            <img src="https://i.postimg.cc/mD8gD96n/image-fd025f.jpg" alt="Foto Farel Sehan Ramadhani" class="profile-img">
+            <h2>FAREL SEHAN RAMADHANI</h2>
+            <p>Calon Putra Daerah / Agent of Change</p>
+        </div>
+
+        <!-- Angka Fakta Makro -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>#1 ASIA</h3>
+                <p>Nanas Kaleng<br>Terbanggi Besar</p>
             </div>
-            <div class="cover-img-container">
-                <!-- PENTING: Ganti src dengan Direct Link foto online-mu dari Postimages -->
-                <img src="image_fd025f.jpg" alt="Farel Sehan Ramadhani" class="cover-img">
+            <div class="stat-card">
+                <h3>60+</h3>
+                <p>Negara Tujuan<br>Ekspor Global</p>
+            </div>
+            <div class="stat-card">
+                <h3>45%</h3>
+                <p>Pasokan Kopi<br>Robusta Nasional</p>
             </div>
         </div>
-        <div class="nav-hint">TEKAN PANAH KANAN (➔) DI KEYBOARD UNTUK LANJUT</div>
-    </div>
 
-    <!-- SLIDE 2: LATAR BELAKANG -->
-    <div class="slide" id="slide-2">
-        <div class="slide-container">
-            <div class="slide-header">
-                <h2>LATAR BELAKANG & PARADOKS DATA</h2>
-                <p>Raksasa Ekonomi yang Tak Terlihat</p>
+        <!-- Masalah & Realita -->
+        <div class="section-title">
+            <i class="fa-solid fa-gopuram"></i> Melawan Stigma Pelosok
+        </div>
+        <div class="content-box">
+            <p><strong>Menyingkap Wajah Asli Lampung:</strong> Banyak orang luar mengira Lampung hanya hutan belantara terpencil. Platform ini melangkah lebih jauh (Beyond Forest) untuk menjelajahi keindahan budaya, keelokan aksara, pesona pariwisata, hingga kekuatan industri modern yang mendunia.</p>
+        </div>
+
+        <!-- Tombol Aksi Nyata Duta Daerah -->
+        <div class="section-title">
+            <i class="fa-solid fa-fingerprint"></i> Hub Interaktif Putra Daerah
+        </div>
+        
+        <div class="btn-menu">
+            <!-- TOMBOL 1: SEJARAH -->
+            <div class="btn-item" onclick="toggleSection('history-content', 'arrow-1')">
+                <span><i class="fa-solid fa-hourglass-half"></i> &nbsp;Buka Garis Waktu Sejarah</span>
+                <i class="fa-solid fa-chevron-down" id="arrow-1"></i>
             </div>
-            <div class="slide-content">
+
+            <div class="interactive-box" id="history-content">
+                <h4>Kronologi Kejayaan & Perjuangan Bumi Lampung:</h4>
                 <ul>
-                    <li><strong>Fakta Makro Ekspor:</strong> Produk hilirisasi industri bumi Lampung telah berhasil menembus lebih dari 60 negara tujuan ekspor global secara konsisten.</li>
-                    <li><strong>Pemain Utama Asia:</strong> Kecamatan Terbanggi Besar di Lampung Tengah merupakan rumah bagi industri produsen makanan nanas kaleng nomor 1 di Asia.</li>
-                    <li><strong>Paradoks Geografis:</strong> Di balik dominasi ekonomi makro ini, masyarakat luar pulau masih kerap menyematkan stigma keliru bahwa Lampung hanyalah wilayah pelosok terpencil yang didominasi hutan belantara tanpa masa depan industri modern.</li>
+                    <li><strong>Era Kolonial (1682):</strong> Karena kaya akan lada dan rempah-rempah, Lampung diincar oleh VOC Belanda melalui perjanjian dagang monopoli dengan Sultan Haji dari Kesultanan Banten.</li>
+                    <li><strong>Perlawanan Radin Inten I - II (1817-1856):</strong> Rakyat Lampung gencar melawan penindasan. Dipimpin secara turun-temurun oleh Radin Inten, Radin Imba Kusuma, hingga pahlawan nasional Radin Inten II yang gugur demi menjaga kedaulatan tanah Lampung.</li>
+                    <li><strong>Awal Industrialisasi Modern (1913):</strong> Penancapan pengaruh komoditas perkebunan kopi, karet, dan sawit oleh Belanda yang disusul oleh pembangunan jalur kereta api pertama dari Telukbetung menuju Palembang.</li>
+                    <li><strong>Kelahiran Provinsi (18 Maret 1964):</strong> Menunjukkan corak warna budaya dan potensi ekonomi mandiri yang sangat masif, Lampung resmi memisahkan diri dari Karesidenan Sumatra Selatan menjadi Provinsi Lampung Tingkat I berdasarkan UU No. 14 Tahun 1964.</li>
                 </ul>
             </div>
+
+            <!-- TOMBOL 2: EKSPLORASI BUDAYA -->
+            <a class="btn-item" onclick="alert('Membuka Ruang Budaya: Memuat ensiklopedia digital pakaian adat Tapis, seni pertunjukan, serta penerapan nilai luhur Piil Pesenggiri sebagai identitas karakter masyarakat Lampung!')">
+                <span><i class="fa-solid fa-gopuram"></i> &nbsp;Eksplorasi Kebudayaan Daerah</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+
+            <!-- TOMBOL 3: PARIWISATA -->
+            <a class="btn-item" onclick="alert('Membuka Peta Wisata: Menjelajahi pesona wisata Lampung, mulai dari Pantai Gigi Hiu, Teluk Kiluan, Taman Nasional Way Kambas, hingga keindahan alam dataran tinggi Lampung Barat!')">
+                <span><i class="fa-solid fa-compass"></i> &nbsp;Jelajah Pesona Pariwisata</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+
+            <!-- TOMBOL 4: DATA INDUSTRI -->
+            <a class="btn-item" onclick="alert('Membuka Data Industri: Memuat infografis lengkap komoditas ekspor kopi robusta, lada hitam, dan fakta industri nanas kaleng nomor 1 Asia di Terbanggi Besar!')">
+                <span><i class="fa-solid fa-chart-line"></i> &nbsp;Buka Data Industri Global</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+            
+            <!-- TOMBOL 5: TAGAR & OLEH-OLEH -->
+            <a class="btn-item" onclick="alert('Terima kasih atas dukungannya! Melalui gerakan stiker QR Code pada kemasan oleh-oleh khas Lampung (kopi robusta, keripik pisang) dan tagar #LampungBeyondForest, mari kita kenalkan kekayaan Ruwa Jurai ke seluruh penjuru dunia!')">
+                <span><i class="fa-solid fa-gift"></i> &nbsp;Suarakan #LampungBeyondForest</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
         </div>
+
+        <!-- Slogan Adat Duta Daerah -->
+        <footer>
+            <em>"Muli mekhanai pelestari budayo, sai mak tabo, sai mak ngelaknai."</em>
+            <span>Inisiasi Aksi Nyata Mandiri oleh Farel Sehan Ramadhani &copy; 2026</span>
+        </footer>
     </div>
 
-    <!-- SLIDE 3: URGENSI -->
-    <div class="slide" id="slide-3">
-        <div class="slide-container">
-            <div class="slide-header">
-                <h2>URGENSI PERMASALAHAN</h2>
-                <p>Krisis Identitas di Tengah Stigma</p>
-            </div>
-            <div class="slide-content">
-                <ul>
-                    <li><strong>Degradasi Kebanggaan Daerah:</strong> Anggapan keliru tentang wilayah pelosok perlahan menurunkan tingkat kepercayaan diri (<em>local pride</em>) generasi muda asli daerah.</li>
-                    <li><strong>Kesenjangan Informasi Digital:</strong> Melimpahnya potensi pariwisata (Pantai Gigi Hiu, Teluk Kiluan, alam Lampung Barat) dan keunikan Aksara Lampung belum terintegrasi dalam wadah digital yang mudah diakses Gen-Z.</li>
-                    <li><strong>Ancaman Arus Globalisasi:</strong> Tanpa media edukasi yang adaptif, kekayaan nilai adat, bahasa, dan sejarah lokal akan semakin tergerus oleh urbanisasi dan tren luar.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- SLIDE 4: SOLUSI -->
-    <div class="slide" id="slide-4">
-        <div class="slide-container">
-            <div class="slide-header">
-                <h2>SOLUSI INOVASI</h2>
-                <p>Platform Digital "LAMPUNG BEYOND FOREST"</p>
-            </div>
-            <div class="slide-content">
-                <ul>
-                    <li><strong>Definisi Inovasi:</strong> Sebuah <em>Interactive Digital Hub</em> berbasis web responsive tanpa coding yang dirancang secara mandiri sebagai alat advokasi digital yang modern.</li>
-                    <li><strong>Misi Utama:</strong> Menghancurkan stigma "pelosok" dengan menyajikan fakta otentik keindahan budaya, panduan bahasa/aksara, peta wisata tersembunyi, hingga kejayaan data industri makro dalam satu layar interaktif.</li>
-                    <li><strong>Karakteristik Sistem:</strong> Ringkas, berbasis data (<em>data-driven</em>), ramah pengguna handphone, dan sangat mudah dipahami oleh generasi muda masa kini.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- SLIDE 5: BEDAH FITUR (SUDAH DIISI LENGKAP) -->
-    <div class="slide" id="slide-5">
-        <div class="slide-container">
-            <div class="slide-header">
-                <h2>BEDAH FITUR PORTAL INTERAKTIF</h2>
-                <p>Satu Akses untuk Seluruh Kekayaan Daerah</p>
-            </div>
-            <div class="grid-layout">
-                <!-- Kolom 1 -->
-                <div class="grid-card">
-                    <div class="grid-card-header">
-                        <i class="fa-solid fa-gopuram"></i>
-                        <h3>Budaya & Aksara</h3>
-                    </div>
-                    <ul>
-                        <li><strong>Digitalisasi Had Lampung:</strong> Tabel panduan interaktif membaca dan menulis Aksara Lampung langsung via smartphone.</li>
-                        <li><strong>Filosofi Adat Luhur:</strong> Re-edukasi makna mendalam motif kain Tapis serta penanaman karakter berbasis <em>Piil Pesenggiri</em>[cite: 1].</li>
-                        <li><strong>Seni Pertunjukan:</strong> Dokumentasi visual arti simbolis Tari Sigeh Penguten, Tari Melinting, dan pelestarian sastra lisan.</li>
-                    </ul>
-                </div>
-                <!-- Kolom 2 -->
-                <div class="grid-card">
-                    <div class="grid-card-header">
-                        <i class="fa-solid fa-compass"></i>
-                        <h3>Pesona Wisata</h3>
-                    </div>
-                    <ul>
-                        <li><strong>Peta Navigasi Terpadu:</strong> Pengelompokan destinasi wisata unggulan Lampung berdasarkan klaster wilayah secara interaktif.</li>
-                        <li><strong>Eksotisme Bahari:</strong> Panduan menjelajahi lumba-lumba Teluk Kiluan, batuan karst Pantai Gigi Hiu, dan selam Pulau Pahawang.</li>
-                        <li><strong>Ekowisata & Dataran Tinggi:</strong> Penjelajahan pesona alam Lampung Barat, agrowisata kopi, hingga konservasi gajah Way Kambas.</li>
-                    </ul>
-                </div>
-                <!-- Kolom 3 -->
-                <div class="grid-card">
-                    <div class="grid-card-header">
-                        <i class="fa-solid fa-chart-line"></i>
-                        <h3>Industri & Sejarah</h3>
-                    </div>
-                    <ul>
-                        <li><strong>Garis Waktu Perjuangan:</strong> Kronologi sejarah emas dari monopoli lada (1682) hingga heroisme Pahlawan Nasional Radin Inten II.</li>
-                        <li><strong>Raksasa Pangan Asia:</strong> Profil modernisasi pabrik nanas kaleng nomor 1 Asia di Terbanggi Besar dan logistik Pelabuhan Panjang.</li>
-                        <li><strong>Statistik Komoditas Ekspor:</strong> Infografis data riil Lampung sebagai penopang utama 45% lada hitam dan kopi robusta nasional ke pasar Eropa.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SLIDE 6: STRATEGI IMPLEMENTASI -->
-    <div class="slide" id="slide-6">
-        <div class="slide-container">
-            <div class="slide-header">
-                <h2>STRATEGI IMPLEMENTASI NYATA</h2>
-                <p>Smart Embedded System</p>
-            </div>
-            <div class="grid-layout">
-                <div class="grid-card">
-                    <div class="grid-card-header">
-                        <i class="fa-solid fa-user-tie"></i>
-                        <h3>Media Berjalan</h3>
-                    </div>
-                    <p style="font-size: 13px; line-height: 1.5; color: #E0E0E0;">Menyematkan stiker QR Code fisik langsung pada ujung selempang resmi Putra Daerah saat bertugas di lapangan agar bisa dipindai instan oleh audiens yang ditemui.</p>
-                </div>
-                <div class="grid-card">
-                    <div class="grid-card-header">
-                        <i class="fa-solid fa-box-open"></i>
-                        <h3>Smart Packaging</h3>
-                    </div>
-                    <p style="font-size: 13px; line-height: 1.5; color: #E0E0E0;">Bermitra dengan pusat oleh-oleh lokal untuk menempelkan stiker QR Code di setiap kemasan produk khas (kopi robusta, keripik pisang) guna menjangkau luar daerah secara organik.</p>
-                </div>
-                <div class="grid-card">
-                    <div class="grid-card-header">
-                        <i class="fa-solid fa-share-nodes"></i>
-                        <h3>Amplifikasi Sosial</h3>
-                    </div>
-                    <p style="font-size: 13px; line-height: 1.5; color: #E0E0E0;">Menggunakan platform digital profesional dan media kreatif untuk mengampanyekan tagar penyeimbang algoritma positif daerah: #LampungBeyondForest.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SLIDE 7: PENUTUP -->
-    <div class="slide" id="slide-7">
-        <div class="slide-container" style="text-align: center;">
-            <h1 style="font-size: 70px; color: var(--primary); font-weight: 800; margin-bottom: 20px;">TERIMA KASIH</h1>
-            <p class="slogan">"Muli mekhanai pelestari budayo, sai mak tabo, sai mak ngelaknai."[cite: 1]</p>
-            <p style="font-size: 20px; color: #DDDDDD; margin-top: 30px;">
-                <i class="fa-solid fa-qrcode" style="color: var(--primary);"></i> &nbsp;Arahkan kamera smartphone Anda, pindai QR Code di selempang saya, dan mari saksikan wajah asli kejayaan Lampung.
-            </p>
-        </div>
-    </div>
-
-    <!-- LOGIKA SCRIPT UNTUK MENJALANKAN SLIDE -->
-    <script {transparent}>
-        let currentSlide = 1;
-        const totalSlides = 7;
-
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'ArrowRight' || event.key === ' ') {
-                if (currentSlide < totalSlides) {
-                    document.getElementById(`slide-${currentSlide}`).classList.remove('active');
-                    currentSlide++;
-                    document.getElementById(`slide-${currentSlide}`).classList.add('active');
-                }
-            } else if (event.key === 'ArrowLeft') {
-                if (currentSlide > 1) {
-                    document.getElementById(`slide-${currentSlide}`).classList.remove('active');
-                    currentSlide--;
-                    document.getElementById(`slide-${currentSlide}`).classList.add('active');
-                }
+    <!-- Fungsi Logika Javascript untuk Dropdown -->
+    <script>
+        function toggleSection(contentId, arrowId) {
+            var content = document.getElementById(contentId);
+            var arrow = document.getElementById(arrowId);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                arrow.className = "fa-solid fa-chevron-down";
+            } else {
+                content.style.display = "block";
+                arrow.className = "fa-solid fa-chevron-up";
             }
-        });
+        }
     </script>
+
 </body>
 </html>
